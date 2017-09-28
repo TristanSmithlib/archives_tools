@@ -63,6 +63,7 @@ def writeConfig(config):
 	
 #basic function to get ASpace login details from a config file
 def getLogin(aspaceLogin = None):
+	"""Get ASpace login details from local_settings.cfg in the same directory."""
 	if aspaceLogin is None:
 		config = readConfig()
 		
@@ -102,7 +103,13 @@ def setPassword(password):
 
 #function to get an ArchivesSpace session
 def getSession(aspaceLogin = None):
-
+	"""Start an ArchivesSpace session.
+	Returns a session to be used in all requests.
+	If no login creentials are passed it will default to the details in the config file.
+	Expects a tuple of login details e.g.:
+		loginData = ("http://localhost:8089", "admin", "admin")
+		session = AS.getSession(loginData)
+	"""
 	#get tuple of login details if not provided with one
 	aspaceLogin = getLogin(aspaceLogin)
 		
