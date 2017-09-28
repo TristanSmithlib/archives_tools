@@ -82,14 +82,11 @@ A Python library for working with the ArchivesSpace API
 
 `
 
-	from archives_tools import aspace as AS
-
-	session = AS.getSession()
-
-	repository = AS.getRepository(session)
-	print (repository.title)
-
-	> M. E. Grenander Department of Special Collections & Archives
+	>>> from archives_tools import aspace as AS
+	>>> session = AS.getSession()
+	>>> repositories = AS.getRepositories(session)
+	>>> print(repositories[0].name)
+	My Test Repository
 
 ### Resources
 
@@ -152,4 +149,3 @@ A Python library for working with the ArchivesSpace API
 	* Can be iterated over to get basic archival object information and to retrieve archival object uris to call with `getArchObj()`
 		* Requires:
 			* 
-
