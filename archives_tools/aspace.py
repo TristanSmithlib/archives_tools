@@ -359,7 +359,11 @@ def deleteObject(session, object, aspaceLogin = None):
 ################################################################
 		
 def getRepositories(session, aspaceLogin = None):
-
+	"""Get a list of available repositories in the ASpace instance
+	>>> repositories = aspace.getRepositories(session)
+	>>> print(repositories[0].name)
+	My Test Repository
+	"""
 	#get ASpace Login info
 	aspaceLogin = getLogin(aspaceLogin)
 	
